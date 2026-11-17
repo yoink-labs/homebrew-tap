@@ -1,0 +1,18 @@
+name: Verify Split on macOS
+on:
+  push:
+    paths: ['Formula/split.rb', '.github/workflows/split.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: macos-latest
+    steps:
+      - name: Install public formula and check launcher
+        run: |
+          brew install yoink-labs/tap/split
+          test "$(command -v split)" = "$(brew --prefix)/bin/split"
+          split --version
+          split --help
+          brew test yoink-labs/tap/split
