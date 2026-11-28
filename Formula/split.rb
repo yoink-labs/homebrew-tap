@@ -1,8 +1,8 @@
 class Split < Formula
   desc "Manage shared expenses and connect MCP clients to Split by Yoink Labs"
   homepage "https://github.com/yoink-labs/homebrew-tap"
-  url "https://github.com/yoink-labs/homebrew-tap/releases/download/split-v0.3.4/split-0.3.4.tar.gz"
-  sha256 "25973d1a875805aa9345304b215e9ea5033d7770debd84344ad3e163b61185a0"
+  url "https://github.com/yoink-labs/homebrew-tap/releases/download/split-v0.3.5/split-0.3.5.tar.gz"
+  sha256 "2d58f1fe7ba12d3f44f1b7c16ab1e1f516b35649b2f82ab53bdfc6c6098ba789"
 
   depends_on "node"
 
@@ -20,7 +20,7 @@ class Split < Formula
   end
 
   test do
-    assert_equal "split 0.3.4", shell_output("#{bin}/split --version").strip
+    assert_equal "split 0.3.5", shell_output("#{bin}/split --version").strip
     assert_match "Usage: split", shell_output("#{bin}/split --help")
   end
 end
